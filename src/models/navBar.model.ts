@@ -1,7 +1,5 @@
-type NavBarType = {
-    heading: string,
-    navTitles: string[],
-    navLinks: string[],
+export type NavBarData = {
+    heading: string;
+    feature: string[];
+    navLinks: string[];
 }
-
-export default NavBarType
