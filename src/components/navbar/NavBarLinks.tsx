@@ -1,13 +1,15 @@
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
+import { navBarObject, NavBarType } from "../../models/navBar.model"
+import { useState } from "react";
 
 
 
-const NavBarLinks = (props) => {
-
+const NavBarLinks = ({ navBarObject }) => {
     return (
-        <Link to={props.navLinks}>
-            {props.navLinks}
-        </Link>
+        <>
+            <NavLink to={navBarObject.navLinks[0]}>{navBarObject.addOn[0]}</NavLink>
+            <NavLink to={navBarObject.navLinks[1]}>{navBarObject.addOn[1]}</NavLink>
+        </>
     )
 }
 export default NavBarLinks

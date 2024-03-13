@@ -3,12 +3,13 @@ import { navBarObject } from "../../models/navBar.model"
 import { useEffect, useState } from "react"
 import NavBarLinks from "./NavBarLinks"
 
+
+
 const NavBar = () => {
     const location = useLocation()
     const heading = navBarObject.heading
 
     let [spanAddOn, setspanAddOn] = useState<string | undefined>();
-    let [link, setLink] = useState<string[]>([]);
 
 
     useEffect(() => {
@@ -33,11 +34,12 @@ const NavBar = () => {
     }, [location])
 
     return (
-        <div className="navBar">
+        <nav className="navBar">
             <h1>{heading}
                 <span> {spanAddOn}</span>
             </h1>
-        </div>
+            <NavBarLinks navBarObject={navBarObject} />
+        </nav>
     )
 
 }
