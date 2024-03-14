@@ -22,6 +22,8 @@ type DetailCardProps = {
 
 //component
 const DetailCard = ({ detail }: DetailCardProps): JSX.Element => {
+
+
     const card = (
         <>
             <CardContent className='detailCardContent ' >
@@ -40,7 +42,7 @@ const DetailCard = ({ detail }: DetailCardProps): JSX.Element => {
                 <Button>
                     <EditIcon />
                 </Button>
-                <Button sx={{ color: "red" }} onClick={() => handleDelteTicket(window.location.pathname)}>
+                <Button sx={{ color: "red" }} onClick={() => handleDelteTicket()}>
                     <DeleteForeverOutlined />
                 </Button>
             </CardActions>
