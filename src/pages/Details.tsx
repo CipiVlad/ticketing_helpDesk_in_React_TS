@@ -22,6 +22,6 @@ const Details = (): JSX.Element => {
     }, [ticketId])
 
 
-    return <DetailCard detail={detail} />
+    return <DetailCard detail={detail} ticketId={ticketId} />
 }
 export default Details

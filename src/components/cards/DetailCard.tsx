@@ -7,22 +7,37 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { Button, CardActions } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
-import { DeleteForeverOutlined } from '@mui/icons-material';
+import { DeleteForeverOutlined } from '@mui/icons-material'
+
 
 //import util
-import handleDelteTicket from '../../utils/handleDelete';
+import handleDelteTicket from '../../utils/handleDeleteTicket';
 
 //import type
 import { Ticket } from '../../models/ticket.model';
+import { useNavigate } from 'react-router-dom';
 
 type DetailCardProps = {
     detail: Ticket;
+    ticketId: string
 }
 
 
 //component
-const DetailCard = ({ detail }: DetailCardProps): JSX.Element => {
+const DetailCard = ({ detail, ticketId }: DetailCardProps): JSX.Element => {
 
+    //open and close MUI dialog
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const navigate = useNavigate()
 
     const card = (
         <>
@@ -31,19 +46,20 @@ const DetailCard = ({ detail }: DetailCardProps): JSX.Element => {
                     <em>Incident: </em> {detail.title}
                 </Typography>
                 <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                    <em>Ticket-No.: </em> {detail.id}
+                    <em>Ticket-No.: </em> <b>{detail.id}</b>
                 </Typography>
-                <Typography><em>Description:</em> {detail.description}</Typography>
-                <Typography><em>Type Of Problem:</em> Hardware? {detail.hardware} | Software? {detail.software} </Typography>
-                <Typography><em>Progress Status:</em> {detail.solvingStatus}</Typography>
-                <Typography><em>Priority:</em> {detail.priorityStatus}</Typography>
+                <Typography><em>Description:</em> <b>{detail.description}</b></Typography>
+                <Typography><em>Type Of Problem:</em> Hardware? <b>{detail.hardware}</b> | Software? <b>{detail.software}</b> </Typography>
+                <Typography><em>Solving Status:</em> <b>{detail.solvingStatus}</b></Typography>
+                <Typography><em>Priority:</em> <b>{detail.priorityStatus}</b></Typography>
             </CardContent>
             <CardActions>
                 <Button>
                     <EditIcon />
                 </Button>
-                <Button sx={{ color: "red" }} onClick={() => handleDelteTicket()}>
-                    <DeleteForeverOutlined />
+
+                <Button sx={{ color: "red" }} onClick={() => handleDelteTicket(ticketId).then(() => navigate("/"))}>
+                    <DeleteForeverOutlined sx={{ color: "lightcoral" }} />
                 </Button>
             </CardActions>
         </>

@@ -1,7 +1,10 @@
-type Props = {}
-const CreateNewTicket = (props: Props) => {
+import FormCard from "../components/cards/FormCard"
+
+const CreateNewTicket = () => {
     return (
-        <div>CreateNewTicket</div>
+        <div>
+            <FormCard />
+        </div>
     )
 }
 

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Ticket } from '../../models/ticket.model'
 import { NavLink } from 'react-router-dom';
 
@@ -28,7 +27,7 @@ const TicketCard = ({ ticket }: TicketCardProps) => {
     return (
         <Box>
             <Card
-                sx={{ backgroundColor: "#c74040", margin: "2px" }}
+                sx={{ backgroundColor: "rgb(1,1,1,0.8)", margin: "2px" }}
                 elevation={24}
             >
                 {card}

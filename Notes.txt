@@ -1,20 +1,3 @@
-# Problem: 
-    NavBar has one fixed heading, and switches addOn with each pagination
-    heading: 'Ticketing Help Desk Service -' + addOn,
-    i.e. :     
-    Page "Overview" ==> 
-    <h1>{heading} <span>{add0n}<span/></h1>
-    addOn = ""
-
---> try with switch case:
-    switch
-
-
-
-* Structure Of NavBar - Component
-<NavBar
-    heading = {navBarObject.heading}
-/>
 
 
 
