@@ -17,6 +17,7 @@ import handleDelteTicket from '../../utils/handleDeleteTicket';
 import { Ticket } from '../../models/ticket.model';
 import { useNavigate } from 'react-router-dom';
 
+//props for detail card component
 type DetailCardProps = {
     detail: Ticket;
     ticketId: string
@@ -29,19 +30,17 @@ const DetailCard = ({ detail, ticketId }: DetailCardProps): JSX.Element => {
     //open and close MUI dialog
     const [open, setOpen] = React.useState(false);
 
-    const handleClickOpen = () => {
+    //delete ticket
+    const handleConfirmDelete = () => {
         if (window.confirm('Are you sure you want to delete this item?')) {
             handleDelteTicket(ticketId)
             navigate('/')
         }
     };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
-
+    //navigate back to ticket list
     const navigate = useNavigate()
 
+    //card content for detail card component 
     const card = (
         <>
             <CardContent className='detailCardContent ' >
@@ -61,7 +60,7 @@ const DetailCard = ({ detail, ticketId }: DetailCardProps): JSX.Element => {
                     <EditIcon />
                 </Button>
 
-                <Button sx={{ color: "red" }} onClick={handleClickOpen}>
+                <Button sx={{ color: "red" }} onClick={handleConfirmDelete}>
                     <DeleteForeverOutlined sx={{ color: "lightcoral" }} />
                 </Button>
             </CardActions>
