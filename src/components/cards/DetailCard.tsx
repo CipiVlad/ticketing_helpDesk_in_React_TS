@@ -30,7 +30,10 @@ const DetailCard = ({ detail, ticketId }: DetailCardProps): JSX.Element => {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
-        setOpen(true);
+        if (window.confirm('Are you sure you want to delete this item?')) {
+            handleDelteTicket(ticketId)
+            navigate('/')
+        }
     };
 
     const handleClose = () => {
@@ -58,7 +61,7 @@ const DetailCard = ({ detail, ticketId }: DetailCardProps): JSX.Element => {
                     <EditIcon />
                 </Button>
 
-                <Button sx={{ color: "red" }} onClick={() => handleDelteTicket(ticketId).then(() => navigate("/"))}>
+                <Button sx={{ color: "red" }} onClick={handleClickOpen}>
                     <DeleteForeverOutlined sx={{ color: "lightcoral" }} />
                 </Button>
             </CardActions>
