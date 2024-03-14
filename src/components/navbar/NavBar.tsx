@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom"
+import { useLocation, useParams } from "react-router-dom"
 import { navBarObject } from "../../models/navBar.model"
 import { useEffect, useState } from "react"
 import NavBarLinks from "./NavBarLinks"
@@ -7,9 +7,11 @@ import NavBarLinks from "./NavBarLinks"
 
 const NavBar = () => {
     const location = useLocation()
+    const detailsPathname = window.location.pathname
+
     const heading = navBarObject.heading
 
-    let [spanAddOn, setspanAddOn] = useState<string | undefined>();
+    const [spanAddOn, setspanAddOn] = useState<string | undefined>();
 
 
     useEffect(() => {
@@ -24,7 +26,7 @@ const NavBar = () => {
             case '/edit-ticket':
                 setspanAddOn(navBarObject.addOn[2]);
                 break;
-            case '/details':
+            case `${detailsPathname}`:
                 setspanAddOn(navBarObject.addOn[3]);
                 break;
             default:

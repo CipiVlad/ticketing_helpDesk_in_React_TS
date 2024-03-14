@@ -1,5 +1,4 @@
 import './style.css'
-import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import TicketList from './pages/TicketList'
 import CreateNewTicket from './pages/CreateNewTicket'
@@ -13,7 +12,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<TicketList />} />
-        <Route path="/details" element={<Details />} />
+        <Route path="/details/:ticketId" element={<Details />} />
         <Route path="/create-new-ticket" element={<CreateNewTicket />} />
         <Route path="/edit-ticket" element={<EditTicket />} />
       </Routes>

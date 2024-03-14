@@ -12,12 +12,11 @@ type TicketCardProps = {
 }
 
 const TicketCard = ({ ticket }: TicketCardProps) => {
-
     const card = (
         <>
             <CardContent className='renderTicketCardContainer'>
                 <Typography variant='h6'>
-                    <NavLink to={"/details"}>{ticket.title}</NavLink>
+                    <NavLink to={`/details/${ticket.id}`}>{ticket.title}</NavLink>
                 </Typography>
                 <Typography sx={{ mb: 1.5 }} color="text.secondary">
                     Ticket-No.: {ticket.id}
