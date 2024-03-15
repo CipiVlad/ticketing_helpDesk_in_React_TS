@@ -56,3 +56,32 @@ body {
 
 
 /* detial card style */
+.detailCardContent {
+    background-color: rgb(1, 1, 1, 0.6);
+    border-radius: 6px;
+    color: white;
+    padding: 1em;
+    /* margin: 1em; */
+    height: 65vh;
+}
+
+.detailCardContent h6 {
+    font-size: 32px;
+}
+
+.detailCardContent p {
+    font-size: 24px;
+    line-height: 2.5;
+}
+
+.detailCardContent em {
+    font-weight: 600;
+    color: salmon;
+}
+
+.detailCardContainer {
+    margin-top: 1vh;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}

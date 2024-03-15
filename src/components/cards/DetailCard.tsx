@@ -47,7 +47,7 @@ const DetailCard = ({ detail, ticketId }: DetailCardProps): JSX.Element => {
                 <Typography variant='h6' >
                     <em>Incident: </em> {detail.title}
                 </Typography>
-                <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                <Typography sx={{ mb: 1.5, }} color="text">
                     <em>Ticket-No.: </em> <b>{detail.id}</b>
                 </Typography>
                 <Typography><em>Description:</em> <b>{detail.description}</b></Typography>
@@ -57,18 +57,18 @@ const DetailCard = ({ detail, ticketId }: DetailCardProps): JSX.Element => {
             </CardContent>
             <CardActions>
                 <Button>
-                    <EditIcon />
+                    <EditIcon sx={{ color: "white" }} />
                 </Button>
 
                 <Button sx={{ color: "red" }} onClick={handleConfirmDelete}>
-                    <DeleteForeverOutlined sx={{ color: "lightcoral" }} />
+                    <DeleteForeverOutlined sx={{ color: "white" }} />
                 </Button>
             </CardActions>
         </>
     )
 
     return (
-        <Box>
+        <Box className='detailCardContainer'>
             <Card
                 sx={{ backgroundColor: detail.solvingStatus === "undone" ? "#c74240" : "#58ec1e", margin: "2px" }}
                 elevation={24}
