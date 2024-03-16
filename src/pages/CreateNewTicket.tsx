@@ -1,9 +1,9 @@
-import FormCard from "../components/cards/FormCard"
+import CreateNewTicketForm from "../components/cards/CreateNewTicketForm"
 
 const CreateNewTicket = () => {
     return (
         <div>
-            <FormCard />
+            <CreateNewTicketForm />
         </div>
     )
 }

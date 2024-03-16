@@ -6,7 +6,7 @@ import { baseURL } from "../../data/baseURL";
 import { useNavigate } from "react-router-dom";
 
 
-const FormCard = () => {
+const CreateNewTicketForm = () => {
 
     const navigate = useNavigate()
     const [inputs, setInputs] = useState<Ticket>({})
@@ -51,4 +51,4 @@ const FormCard = () => {
     )
 }
 
-export default FormCard
+export default CreateNewTicketForm
