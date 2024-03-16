@@ -8,7 +8,7 @@ import NavBarLinks from "./NavBarLinks"
 const NavBar = () => {
     const location = useLocation()
     const detailsPathname = window.location.pathname
-
+    const editTicketPathname = window.location.pathname
     const heading = navBarObject.heading
 
     const [spanAddOn, setspanAddOn] = useState<string | undefined>();
@@ -23,7 +23,7 @@ const NavBar = () => {
             case '/create-new-ticket':
                 setspanAddOn(navBarObject.addOn[1]);
                 break;
-            case '/edit-ticket':
+            case `${editTicketPathname}`:
                 setspanAddOn(navBarObject.addOn[2]);
                 break;
             case `${detailsPathname}`:
