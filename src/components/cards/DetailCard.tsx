@@ -57,7 +57,7 @@ const DetailCard = ({ detail, ticketId }: DetailCardProps): JSX.Element => {
             </CardContent>
             <CardActions>
                 <Button>
-                    <NavLink to={`/edit-ticket/${ticketId}`} style={{ color: "white" }}>
+                    <NavLink to={`/edit-ticket/${ticketId}`} style={{ color: "white" }} state={detail}>
                         <EditIcon sx={{ color: "white" }} />
                     </NavLink>
                 </Button>

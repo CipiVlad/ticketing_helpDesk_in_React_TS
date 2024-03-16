@@ -16,7 +16,6 @@ function App() {
         <Route path="/create-new-ticket" element={<CreateNewTicket />} />
         <Route path="/edit-ticket/:ticketId" element={<EditTicket />} />
       </Routes>
-
     </div>
   )
 }

@@ -5,7 +5,6 @@ import { Ticket } from "../models/ticket.model";
 import TicketCard from "../components/cards/TicketCard";
 
 const TicketList = () => {
-
     const [tickets, setTickets] = useState<Ticket[]>([])
 
     useEffect(() => {
