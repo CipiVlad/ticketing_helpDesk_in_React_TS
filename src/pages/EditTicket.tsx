@@ -9,13 +9,6 @@ import EditCard from "../components/cards/EditCard"
 
 const EditTicket = () => {
     let { state } = useLocation()
-
-    window.onhashchange = () => {
-        confirm('Are you sure you want to leave?');
-
-
-    }
-
     return (
         <div>
             <EditCard ticketState={state} />
