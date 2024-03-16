@@ -8,18 +8,13 @@ import { v4 as uuidv4 } from 'uuid';
 import EditCard from "../components/cards/EditCard"
 
 import FormCard from "../components/cards/CreateNewTicketForm"
-type EditTicketProps = {
-    ticket: Ticket
-}
-const EditTicket = ({ ticket }: EditTicketProps) => {
-    const { ticketId } = useParams()
-
-    const [editTicket, setEditTicket] = useState<Ticket>(ticket)
-    console.log(ticket);
-
+// type EditTicketProps = {
+//     ticket: Ticket
+// }
+const EditTicket = () => {
     return (
         <div>
-            <EditCard ticket={editTicket} />
+            <EditCard />
         </div>
     )
 }
