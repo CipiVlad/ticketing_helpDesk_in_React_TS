@@ -15,7 +15,7 @@ import handleDelteTicket from '../../utils/handleDeleteTicket';
 
 //import type
 import { Ticket } from '../../models/ticket.model';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 //props for detail card component
 type DetailCardProps = {
@@ -57,7 +57,9 @@ const DetailCard = ({ detail, ticketId }: DetailCardProps): JSX.Element => {
             </CardContent>
             <CardActions>
                 <Button>
-                    <EditIcon sx={{ color: "white" }} />
+                    <NavLink to={`/edit/${ticketId}`} style={{ color: "white" }}>
+                        <EditIcon sx={{ color: "white" }} />
+                    </NavLink>
                 </Button>
 
                 <Button sx={{ color: "red" }} onClick={handleConfirmDelete}>
@@ -70,7 +72,7 @@ const DetailCard = ({ detail, ticketId }: DetailCardProps): JSX.Element => {
     return (
         <Box className='detailCardContainer'>
             <Card
-                sx={{ backgroundColor: detail.solvingStatus === "undone" ? "#c74240" : "#58ec1e", margin: "2px" }}
+                sx={{ backgroundColor: detail.solvingStatus === "done" ? "#58ec1e" : "#c74240", margin: "2px" }}
                 elevation={24}
             >
                 {card}
