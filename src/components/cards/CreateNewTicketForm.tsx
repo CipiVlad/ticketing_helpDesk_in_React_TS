@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import axios from "axios";
 import { baseURL } from "../../data/baseURL";
 import { useNavigate } from "react-router-dom";
+import Form from "../../utils/Form";
 
 
 const CreateNewTicketForm = () => {
@@ -16,8 +17,17 @@ const CreateNewTicketForm = () => {
         const newTicket: Ticket = {
             id: uuidv4().slice(0, 8),
             title: inputs.title,
-            description: inputs.description
+            description: inputs.description,
+            hardware: inputs.hardware ? "yes" : "no",
+            software: inputs.software ? "yes" : "no",
+            solvingStatus: inputs.solvingStatus ? "undone" : "done",
+            priorityStatus: inputs.priorityStatus === "low" ? "low" : undefined
+                || inputs.priorityStatus === "mid" ? "mid" : undefined
+                    || inputs.priorityStatus === "high" ? "high" : undefined
+
         }
+        console.log(newTicket);
+
 
         const createTicket = async () => {
             try {
@@ -29,23 +39,19 @@ const CreateNewTicketForm = () => {
             }
         }
         createTicket()
-
+        console.log(newTicket);
     }
 
+
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const name = event.target.name
-        const value = event.target.value
+        const { name, value } = event.target
         setInputs(prevState => ({ ...prevState, [name]: value }))
     }
 
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="title">Title:</label>
-                <input type="text" name="title" onChange={handleChange} value={inputs.title} />
-                <label htmlFor="description">Description:</label>
-                <input type="text" name="description" onChange={handleChange} value={inputs.description} />
-                <input type="submit" value="Submit" />
+                <Form inputs={inputs} handleChange={handleChange} handleSubmit={handleSubmit} />
             </form>
         </>
     )
