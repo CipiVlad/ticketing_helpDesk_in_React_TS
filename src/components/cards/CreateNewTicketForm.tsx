@@ -50,7 +50,7 @@ const CreateNewTicketForm = () => {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} >
                 <Form inputs={inputs} handleChange={handleChange} handleSubmit={handleSubmit} />
             </form>
         </>

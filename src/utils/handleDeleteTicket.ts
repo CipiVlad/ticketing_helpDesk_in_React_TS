@@ -1,4 +1,3 @@
-import { Ticket } from "../models/ticket.model";
 import axios from "axios";
 import { baseURL } from "../data/baseURL";
 

@@ -2,10 +2,6 @@
   "tickets": [
     {
       "id": "222",
-      "hardware": "no",
-      "software": "yes",
-      "solvingStatus": "undone",
-      "priorityStatus": "high",
       "title": "ERROR 501",
       "description": "Internal Server Error"
     },
@@ -33,19 +29,11 @@
       "description": "had some cool beer thats why ..."
     },
     {
-      "id": "123bc5f8",
-      "title": "ss",
-      "description": "ss",
-      "hardware": "no",
-      "software": "no",
-      "solvingStatus": "done"
-    },
-    {
-      "id": "16c8640d",
-      "title": "ss",
-      "description": "f",
-      "hardware": "no",
-      "software": "no",
+      "id": "be1ab771",
+      "title": "a",
+      "description": "b",
+      "hardware": "yes",
+      "software": "yes",
       "solvingStatus": "done"
     }
   ]

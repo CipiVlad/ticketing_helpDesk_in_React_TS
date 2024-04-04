@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
+
+body {
+    background-color: #f4d35e;
+}
+
 .App {
     padding: 0;
     margin: 0 auto;
@@ -14,7 +19,8 @@
 
 
 .navBar {
-    background-color: rgb(160, 40, 40);
+    /* background-color: rgb(160, 40, 40); */
+    background-color: #0d3b66;
     color: salmon;
     padding: 4vh;
     border-radius: 6px;
@@ -23,7 +29,7 @@
 .navBar a {
     color: white;
     text-decoration: none;
-    border: 1px solid white;
+    border: 1px solid #f4d35e;
     border-radius: 5px;
     padding: 10px;
     margin-right: 10px;
@@ -35,9 +41,13 @@
 }
 
 .navBar h1 span {
-    color: black;
+    color: #faf0ca
 }
 
+
+.navbar_links {
+    display: flex;
+}
 
 /* incidents style - Ticket Card Style */
 
@@ -52,7 +62,7 @@
 
 .renderTicketCardContainer {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    background-color: #fff;
+    background-color: #f1f0ed;
     border: 2px solid rgb(1, 1, 1, 0.6);
     border-radius: 6px;
     padding: 16px;
@@ -94,4 +104,16 @@
     /* display: flex;
     align-items: center;
     justify-content: center; */
+}
+
+.form_card {
+    background-color: rgba(1, 1, 1, 0.329);
+    border-radius: 6px;
+    padding: 1em;
+    margin: 2vh auto;
+}
+
+.form_card div {
+    margin-bottom: 1em;
+    display: block;
 }

@@ -72,7 +72,7 @@ const DetailCard = ({ detail, ticketId }: DetailCardProps): JSX.Element => {
     return (
         <Box className='detailCardContainer'>
             <Card
-                sx={{ backgroundColor: detail.solvingStatus === "done" ? "#58ec1e" : "#c74240", margin: "2px" }}
+                sx={{ backgroundColor: detail.solvingStatus === "done" ? "#7ae582" : "#f95738", margin: "2px" }}
                 elevation={24}
             >
                 {card}
